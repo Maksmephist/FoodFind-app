@@ -1,0 +1,44 @@
+#:include food_map_view.kv
+#:include image_chooser.kv
+
+<AppLayout>
+    mapview: mapview
+    BoxLayout:
+	    orientation: "vertical"
+		size: root.width, root.height
+		Screen:
+            MDToolbar:
+                title: 'FoodFind'
+                md_bg_color: 1, .5, .2, 1
+                specific_text_color: 0, 0, 0, 1
+
+            MDBottomNavigation:
+                panel_color: 1, .5, .2, 1
+                text_color_active: 0, 0, 0, 1
+                text_color_normal: 1, 1, 1, 1
+
+                MDBottomNavigationItem:
+                    name: 'screen 1'
+                    text: 'photo'
+                    icon: 'image-search'
+                    ImageChooser:
+                        id: imgchooser
+
+                MDBottomNavigationItem:
+                    name: 'screen 2'
+                    text: 'food map'
+                    icon: 'food'
+                    
+                    FoodMapView:
+                        id: mapview
+                                                   
+                MDBottomNavigationItem:
+                    name: 'screen 3'
+                    text: 'settings'
+                    icon: 'cog'
+
+                    MDLabel:
+                        id: label
+                        width: 300
+                        text: 'nothing'
+                        halign: 'center'
