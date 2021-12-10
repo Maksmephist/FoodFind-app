@@ -1,0 +1,12 @@
+#:import filechooser plyer.filechooser
+
+
+<ImageChooser>:
+    MDIconButton:
+        icon: "image-search"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        user_font_size: "64sp"
+        on_release:
+            root.file_chooser()
+            root.run()
+
