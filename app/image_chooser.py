@@ -23,9 +23,8 @@ class ImageChooser(FloatLayout):
 
     def selected(self, selection):
         if selection:
-            food_class = FoodClassificator();
-            food_class.run()
-            answer = food_class.get_answer(selection[0])
+            food_classif_api = FoodClassificator();
+            answer = food_classif_api.get_answer(selection[0])
             App.get_running_app().root.ids.mapview.ids.food_search.text = answer
             App.get_running_app().root.ids.mapview.food_name_input()
             App.get_running_app().root.ids.mapview.start_getting_food_in_fov()
